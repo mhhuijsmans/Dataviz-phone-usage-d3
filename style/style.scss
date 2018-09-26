@@ -1,0 +1,339 @@
+//******************* Imports *******************//
+@import "normalize";
+@import "essentials";
+@import "variables";
+
+
+
+//******************* Start css *******************//
+
+//-----------------//
+//      SIZES      //
+//-----------------//
+$toolbarWidth: 310px;
+$toolbarHeaderHeight: 120px;
+$toolbarPadding: 10px;
+
+
+//-----------------//
+//     GENERAL     //
+//-----------------//
+body {
+    position: fixed;
+    width: 100%;
+    min-width: 925px;
+    height: 100%;
+    background-color: $bg;
+}
+
+.toolbar {
+    transition: width .5s;
+    color: $blue1;
+    
+    .toolbar__header {
+        height: $toolbarHeaderHeight;
+        padding: $toolbarPadding;
+    }
+
+    .toolbar__main {
+        height: calc(100% - #{$toolbarHeaderHeight});
+        padding: $toolbarPadding;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        font-family: $goth1;
+        font-size: 3em;
+        text-transform: uppercase;
+        text-align: center;
+
+        span {
+            display: block;
+            font-family: $mirthe;
+        }
+    }   
+}
+
+#phone {
+    display: block;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+    
+    .screen {
+        fill: $grey1;
+    }
+        
+    .bottom, .top {
+        fill: #666;
+    }
+        
+    .part {
+        fill: $black;
+    }
+    
+    
+    .grouplegend {
+        transform: translate(40px,100px);
+        
+        g.legend {
+            cursor: pointer;
+            
+            &:not(.is-active) rect {
+                fill: transparent !important;
+            }
+        }
+        
+        rect {
+            stroke-width: 2;
+        }
+        
+        text {
+            font: 17px $goth3;
+            transform: translate(0,5px);
+            fill: $white;
+            
+            &.kop {
+                font-size: 22px;
+            }
+        }
+    }
+    
+    .groupcalendar {
+        transform: translate(40px,345px);
+        
+        g.weekpicker, g.weekno {
+            cursor: pointer;
+        }
+        
+        text {
+            font: 17px $goth3;
+            transform: translate(0,5px);
+            fill: $white;
+            
+            &.kop {
+                font-size: 22px;
+            }
+        }
+        
+        .weekpicker {
+            transform: translateY(15px);
+            
+            &:not(.is-active) {
+                &~.weekno {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    .grouptabtoggle {
+        transform: translate(40px,275px);
+        
+        g {
+            cursor: pointer;
+            
+            &.is-active {
+                circle {
+                    fill: $white;
+                }
+            }
+        }
+        
+        text {
+            font: 17px $goth3;
+            transform: translate(0,5px);
+            fill: $white;
+            
+            &.kop {
+                font-size: 22px;
+            }
+        }
+        
+        circle {
+            stroke: $white;
+            stroke-width: 2;            
+        }
+    }
+}
+
+#donut {
+    text {
+        text-anchor: middle;
+        font-size: 20px;
+        font-family: $goth3
+    }
+    
+    g.donut {
+        .deel, .percentage {
+            display: none;
+        }
+
+        .percentage {
+            transform: translate(0,50px);
+        }        
+    }
+    
+    g.donut.is-hovered {
+        .info {
+            opacity: 0;
+        }
+        g {
+            opacity: .3;
+        }
+        g.is-hovered {
+            opacity: 1;
+            .deel, .percentage {
+                display: initial;
+            }
+        }        
+    }
+}
+
+#timeline {
+    .timelinelegend {        
+        rect {
+            stroke: $white;
+            stroke-width: 2;
+        }
+    }
+    
+    text {
+        text-anchor: start;
+        font-size: 20px;
+        font-family: $goth3;
+        fill: $white;
+    }
+    
+    .opbestemming {
+        fill: $grey2;
+    }
+    
+    .onderweg {
+        fill: $grey3;
+    }
+    
+    &.is-hovered {
+        rect.app-part {
+            opacity: 0;
+        }
+        
+        rect.is-hovered {
+            opacity: 1;
+        }
+    }
+}
+
+#map {
+    display: inline-block;
+    width: 756px;
+    height: 638px;
+}
+
+.markers {
+    position: absolute;
+    .marker {
+        opacity: .8;
+    }
+    
+    &.is-hovered {
+        .marker {
+            opacity: 0;
+        }
+        
+        .marker.is-hovered {
+            opacity: 1;
+        }
+    }
+}
+
+.markers svg {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  padding-right: 100px;
+  font: 10px sans-serif;
+}
+
+.h3 {
+    font-size: 26px !important;
+    fill: $white;
+}
+
+.axis {
+    text {
+        font-size: 16px !important;
+    }
+    
+    path, line {
+        fill: none;
+        stroke: $white;
+        shape-rendering: crispEdges;
+    }
+}
+
+//-----------------//
+//     LANDING     //
+//-----------------//
+.is-landing {
+    .toolbar {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .toolbar__header, .toolbar__main {
+        width: 100%;
+    }
+    
+    .fire {
+        display: none;
+        cursor: pointer;
+        
+        &.ready-to-fire {
+            display: initial;
+        }
+    }
+    
+    #instructies {
+        position: absolute;
+        top: 0;
+        right: 60%;
+        left: 0;
+        width: 250px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+
+//-----------------//
+//      LOADED     //
+//-----------------//
+.is-loaded {
+    .toolbar {
+        float: left;
+        width: $toolbarWidth;
+        height: 100%;
+        background-color: $blue1;
+        color: $white; 
+    }
+    
+    .fire {
+        display: none;
+    }
+    
+    #instructies {
+        display: none;
+    }
+    
+    .dashboard {
+        float: left;
+        width: calc(100% - #{$toolbarWidth});
+        height: 100%;
+    }
+}

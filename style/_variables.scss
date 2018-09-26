@@ -1,0 +1,110 @@
+/*
+    ****************** Variables ******************
+*/
+
+@font-face {
+    font-family: 'Alternate Gothic EF No One';
+    src: url(../fonts/AlternateGothicEF_NoOne.ttf);
+}
+
+@font-face {
+    font-family: 'Alternate Gothic EF No Three';
+    src: url(../fonts/AlternateGothicEF_NoThree.ttf);
+}
+
+@font-face {
+    font-family: 'Mirthe\'s Handwriting';
+    src: url(../fonts/Mirthe.ttf);
+}
+
+
+
+$goth1: 'Alternate Gothic EF No One';
+$goth3: 'Alternate Gothic EF No Three';
+$mirthe: 'Mirthe\'s Handwriting';
+
+
+$white: #fff;
+$black: #000;
+$grey: #5f5a56;
+$bg: #333;
+
+$blue1: #3969b1;
+$blue2: #4c7abc;
+$blue3: #76a9d7;
+$blue4: #a3cbee;
+$blue5: #d0e9fa;
+
+$grey1: #111;
+$grey2: #5f5a56;
+$grey3: #888;
+$grey4: #bababa;
+$grey5: #eae7d8;
+
+$dblue: #0559d8;
+$lblue: #46c8f5;
+$dgreen: #0b9e0e;
+$lgreen: #a9fd02;
+$yellow: #f2e33d;
+$red: #e81d25;
+$orange: #ee9a23;
+$pink: #ef9ce2;
+$purple: #9012b0;
+$magenta: #e426e6;
+
+$app9292: $red;
+$browser: $yellow;
+$chrome: $pink;
+$dropbox: $purple;
+$instellingen: $dblue;
+$nos: $lblue;
+$nunl: $dgreen;
+$shazam: $magenta;
+$slack: $orange;
+$whatsapp: $lgreen;
+
+
+
+.App9292 {
+    fill: $app9292;
+}
+
+.Browser {
+    fill: $browser;
+}
+
+.Chrome {
+    fill: $chrome;
+}
+
+.Dropbox {
+    fill: $dropbox;
+}
+
+.Instellingen {
+    fill: $instellingen;
+}
+
+.NOS {
+    fill: $nos;
+}
+
+.NUnl {
+    fill: $nunl;
+}
+
+.Shazam {
+    fill: $shazam;
+}
+
+.Slack {
+    fill: $slack;
+}
+
+.WhatsApp {
+    fill: $whatsapp;
+}
+
+.hide {
+    display: none!important;
+}
